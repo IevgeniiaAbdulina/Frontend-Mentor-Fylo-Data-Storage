@@ -32,118 +32,178 @@ $font-weight-bold: 700;
 body {
   width: 100vw;
   height: 100vh;
-  background: url(../images/bg-desktop.svg) no-repeat bottom / auto auto;
   font-family: $body-font-family;
   font-size: $body-font-size;
   color: $neutral-color-pale-blue;
-  background-color: $neutral-color-very-dark-blue;
-}
-
-section {
-  width: 80vw;
-  height: 100vh;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.files-container {
+  background: $neutral-color-very-dark-blue url(../images/bg-desktop.svg)
+    no-repeat bottom / 100% 50%;
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: auto;
-  border-radius: 12px 100px 12px 12px;
-  background-color: $neutral-color-dark-blue;
+  justify-content: center;
 
-  .logo {
-    background: url(../images/logo.svg) no-repeat;
-    margin: 40px;
-  }
-
-  .files-items {
+  section {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    padding-top: 10%;
+    padding-left: 160px;
     display: flex;
-    margin-top: 40px;
-    padding-top: 40px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
-    span {
-      width: 48px;
-      height: 48px;
+    .files-container {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      height: auto;
+      border-radius: 12px 100px 12px 12px;
+      background-color: $neutral-color-dark-blue;
+
+      .logo {
+        background: url(../images/logo.svg) no-repeat;
+        margin: 40px;
+      }
+
+      .files-items {
+        display: flex;
+        margin-top: 40px;
+        padding-top: 40px;
+
+        span {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          margin-right: 10px;
+          transition: 0.2s ease-out;
+        }
+
+        span:hover {
+          opacity: 0.6;
+        }
+
+        .ic-document {
+          background: $neutral-color-very-dark-blue
+            url(../images/icon-document.svg) no-repeat center;
+          background-size: 50%;
+        }
+
+        .ic-folder {
+          background: $neutral-color-very-dark-blue
+            url(../images/icon-folder.svg) no-repeat center;
+          background-size: 50%;
+        }
+
+        .ic-upload {
+          background: $neutral-color-very-dark-blue
+            url(../images/icon-upload.svg) no-repeat center;
+          background-size: 50%;
+        }
+      }
+    }
+
+    .storage-container {
+      width: 540px;
+      height: auto;
       border-radius: 12px;
-      margin-right: 10px;
-      transition: 0.2s ease-out;
-    }
+      background-color: $neutral-color-dark-blue;
+      margin-left: 30px;
+      padding: 40px;
+      align-self: flex-end;
 
-    span:hover {
-      opacity: 0.6;
-    }
+      .title {
+        font-size: 1rem;
+        font-weight: $font-weight-regular;
+      }
 
-    .ic-document {
-      background: $neutral-color-very-dark-blue url(../images/icon-document.svg)
-        no-repeat center;
-      background-size: 50%;
-    }
+      .progressbar {
+        width: 450px;
+        height: 24px;
+        margin: 18px 0 10px 0;
+        border-radius: 12px;
+        background-color: $neutral-color-very-dark-blue;
 
-    .ic-folder {
-      background: $neutral-color-very-dark-blue url(../images/icon-folder.svg)
-        no-repeat center;
-      background-size: 50%;
-    }
+        .progressbar-line {
+          width: 75%;
+          height: 16px;
+          border-radius: 8px;
+          position: relative;
+          z-index: 1;
+          top: 4px;
+          left: 4px;
+          background: $primary-color-gradient;
+        }
 
-    .ic-upload {
-      background: $neutral-color-very-dark-blue url(../images/icon-upload.svg)
-        no-repeat center;
-      background-size: 50%;
+        .progressbar-line::after {
+          content: "";
+          padding: 6px;
+          margin: 2px;
+          border-radius: 50%;
+          float: right;
+          z-index: 2;
+          background: $neutral-color-pale-blue;
+        }
+      }
+
+      .start-end {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        font-weight: $font-weight-bold;
+      }
     }
   }
-}
 
-.storage-container {
-  width: 540px;
-  height: auto;
-  border-radius: 12px;
-  background-color: $neutral-color-dark-blue;
-  margin-left: 30px;
-  padding: 40px;
-
-  .storage-left {
-    float: right;
-  }
-
-  .progressbar {
-    width: 450px;
-    height: 24px;
-    margin: 18px 0 10px 0;
-    border-radius: 12px;
-    background-color: $neutral-color-very-dark-blue;
-  }
-
-  .progressbar-line {
-    width: 340px;
-    height: 16px;
-    border-radius: 8px;
-    position: relative;
-    z-index: 1;
-    top: 4px;
-    left: 4px;
-    background: $primary-color-gradient;
-  }
-
-  .progressbar-line::after {
-    content: "";
-    padding: 6px;
-    margin: 2px;
-    border-radius: 50%;
-    float: right;
-    z-index: 2;
-    background: $neutral-color-pale-blue;
-  }
-
-  .start-end {
+  .popup {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-self: flex-start;
+    position: relative;
+    right: 210px;
+
+    .storage {
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+      color: $neutral-color-very-dark-blue;
+      background-color: #fff;
+      border-radius: 8px 8px 0 8px;
+      padding: 16px;
+
+      span {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-left: 10px;
+        color: $neutral-color-grayish-blue;
+      }
+    }
+
+    .arrow {
+      position: relative;
+      align-self: flex-end;
+      top: -1px;
+      border-right: 20px solid white;
+      border-bottom: 20px solid transparent;
+    }
+  }
+
+  .attribution {
     font-size: 1rem;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-regular;
+    color: $neutral-color-pale-blue;
+    padding: 60px;
+    align-self: center;
+
+    a {
+      text-decoration: none;
+      color: hsl(335, 100%, 65%);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: hsl(6, 100%, 80%);
+    }
   }
 }
