@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700");
 
 $layout-mobile: 375px;
 $layout-desktop: 1440px;
 
-$primary-color-gradient: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+$primary-color-gradient: linear-gradient(
+  hsl(6, 100%, 80%),
+  hsl(335, 100%, 65%)
+);
 
 $neutral-color-pale-blue: hsl(243, 100%, 93%);
 $neutral-color-grayish-blue: hsl(229, 7%, 55%);
@@ -11,8 +14,7 @@ $neutral-color-dark-blue: hsl(228, 56%, 26%);
 $neutral-color-very-dark-blue: hsl(229, 57%, 11%);
 
 $body-font-size: 14px;
-$body-font-family: 'Raleway',
-sans-serif;
+$body-font-family: "Raleway", sans-serif;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
@@ -35,39 +37,47 @@ body {
 .files-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 350px;
   height: auto;
-  border-radius: 8px 70px 8px 8px;
+  border-radius: 8px 100px 8px 8px;
   background-color: $neutral-color-dark-blue;
 
   .logo {
-    padding: 30px;
+    background: url(../images/logo.svg) no-repeat;
+    margin: 40px;
   }
 
   .files-items {
     display: flex;
-    padding: 0 0 30px 30px;
+    margin-top: 40px;
+    padding-top: 40px;
 
-    div {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+    span {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       margin-right: 10px;
-      background-color: $neutral-color-very-dark-blue;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    img {
-      width: 50%;
-      height: auto;
+    .ic-document {
+      background: $neutral-color-very-dark-blue url(../images/icon-document.svg)
+        no-repeat center;
+      background-size: 50%;
+    }
+
+    .ic-folder {
+      background: $neutral-color-very-dark-blue url(../images/icon-folder.svg)
+        no-repeat center;
+      background-size: 50%;
+    }
+
+    .ic-upload {
+      background: $neutral-color-very-dark-blue url(../images/icon-upload.svg)
+        no-repeat center;
+      background-size: 50%;
     }
   }
 }
-
-
-
 
 .storage-container {
   border: solid $neutral-color-dark-blue;
