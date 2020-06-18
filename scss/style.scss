@@ -4,6 +4,7 @@ $layout-mobile: 375px;
 $layout-desktop: 1440px;
 
 $primary-color-gradient: linear-gradient(
+  90deg,
   hsl(6, 100%, 80%),
   hsl(335, 100%, 65%)
 );
@@ -22,6 +23,10 @@ $font-weight-bold: 700;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: hsl(335, 100%, 65%);
 }
 
 body {
@@ -67,6 +72,11 @@ section {
       height: 48px;
       border-radius: 12px;
       margin-right: 10px;
+      transition: 0.2s ease-out;
+    }
+
+    span:hover {
+      opacity: 0.6;
     }
 
     .ic-document {
@@ -102,11 +112,32 @@ section {
   }
 
   .progressbar {
-    width: 460px;
-    height: 22px;
+    width: 450px;
+    height: 24px;
     margin: 18px 0 10px 0;
     border-radius: 12px;
     background-color: $neutral-color-very-dark-blue;
+  }
+
+  .progressbar-line {
+    width: 340px;
+    height: 16px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    top: 4px;
+    left: 4px;
+    background: $primary-color-gradient;
+  }
+
+  .progressbar-line::after {
+    content: "";
+    padding: 6px;
+    margin: 2px;
+    border-radius: 50%;
+    float: right;
+    z-index: 2;
+    background: $neutral-color-pale-blue;
   }
 
   .start-end {
