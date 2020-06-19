@@ -35,14 +35,13 @@ body {
   font-family: $body-font-family;
   font-size: $body-font-size;
   color: $neutral-color-pale-blue;
-  background: $neutral-color-very-dark-blue url(../images/bg-desktop.svg)
-    no-repeat bottom / 100% 50%;
+  background-color: $neutral-color-very-dark-blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   section {
-    width: 80vw;
+    max-width: 80vw;
     height: auto;
     margin: auto;
     padding-top: 10%;
@@ -79,13 +78,13 @@ body {
         }
 
         span:hover {
-          opacity: 0.6;
+          opacity: 0.75;
         }
 
         .ic-document {
           background: $neutral-color-very-dark-blue
             url(../images/icon-document.svg) no-repeat center;
-          background-size: 50%;
+          background-size: 40%;
         }
 
         .ic-folder {
@@ -190,7 +189,7 @@ body {
   }
 
   .attribution {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: $font-weight-regular;
     color: $neutral-color-pale-blue;
     padding: 60px;
@@ -206,4 +205,16 @@ body {
       color: hsl(6, 100%, 80%);
     }
   }
+}
+
+body::after {
+  content: "";
+  background: url(../images/bg-desktop.svg) no-repeat bottom / 100% 50%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
