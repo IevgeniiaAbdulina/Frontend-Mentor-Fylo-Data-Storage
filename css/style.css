@@ -33,6 +33,15 @@ body section {
   align-content: center;
 }
 
+@media screen and (max-width: 1439px) {
+  body section {
+    flex-wrap: wrap;
+    max-width: 100vw;
+    padding: 0 24px;
+    margin: 0;
+  }
+}
+
 body section .files-container {
   display: flex;
   flex-direction: column;
@@ -40,6 +49,12 @@ body section .files-container {
   height: auto;
   border-radius: 12px 100px 12px 12px;
   background-color: #1d2c67;
+}
+
+@media screen and (max-width: 1439px) {
+  body section .files-container {
+    min-width: 325px;
+  }
 }
 
 body section .files-container .logo {
@@ -90,9 +105,25 @@ body section .storage-container {
   align-self: flex-end;
 }
 
+@media screen and (max-width: 1439px) {
+  body section .storage-container {
+    min-width: 325px;
+    margin-left: 0;
+    margin-top: 18px;
+    padding-bottom: 54px;
+  }
+}
+
 body section .storage-container .title {
   font-size: 1rem;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1439px) {
+  body section .storage-container .title {
+    font-size: 0.8rem;
+    text-align: center;
+  }
 }
 
 body section .storage-container .progressbar {
@@ -101,6 +132,12 @@ body section .storage-container .progressbar {
   margin: 18px 0 10px 0;
   border-radius: 12px;
   background-color: #0c122c;
+}
+
+@media screen and (max-width: 1439px) {
+  body section .storage-container .progressbar {
+    width: 100%;
+  }
 }
 
 body section .storage-container .progressbar .progressbar-line {
@@ -131,12 +168,25 @@ body section .storage-container .start-end {
   font-weight: 700;
 }
 
+@media screen and (max-width: 1439px) {
+  body section .storage-container .start-end {
+    font-size: 0.8rem;
+  }
+}
+
 body .popup {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   position: relative;
   right: 210px;
+}
+
+@media screen and (max-width: 1439px) {
+  body .popup {
+    right: 0;
+    top: -40px;
+  }
 }
 
 body .popup .storage {
@@ -149,6 +199,12 @@ body .popup .storage {
   background-color: #fff;
   border-radius: 8px 8px 0 8px;
   padding: 16px;
+}
+
+@media screen and (max-width: 1439px) {
+  body .popup .storage {
+    border-radius: 8px;
+  }
 }
 
 body .popup .storage span {
@@ -166,12 +222,26 @@ body .popup .arrow {
   border-bottom: 20px solid transparent;
 }
 
+@media screen and (max-width: 1439px) {
+  body .popup .arrow {
+    display: none;
+  }
+}
+
 body .attribution {
   font-size: 0.8rem;
   font-weight: 400;
   color: #dddbff;
   padding: 60px;
   align-self: center;
+}
+
+@media screen and (max-width: 1439px) {
+  body .attribution {
+    padding: 0 24px 24px 24px;
+    text-align: center;
+    line-height: 1.25rem;
+  }
 }
 
 body .attribution a {
@@ -194,4 +264,10 @@ body::after {
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+@media screen and (max-width: 1439px) {
+  body::after {
+    background: url(../images/bg-mobile.svg) no-repeat top/100% 100%;
+  }
 }
