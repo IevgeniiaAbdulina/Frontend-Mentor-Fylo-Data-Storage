@@ -21,7 +21,7 @@ body {
   justify-content: center;
 }
 
-body section {
+body .section {
   max-width: 80vw;
   height: auto;
   margin: auto;
@@ -33,16 +33,15 @@ body section {
   align-content: center;
 }
 
-@media screen and (max-width: 1439px) {
-  body section {
+@media screen and (max-width: 1279px) {
+  body .section {
     flex-wrap: wrap;
-    max-width: 100vw;
+    width: 100vw;
     padding: 0 24px;
-    margin: 0;
   }
 }
 
-body section .files-container {
+body .section .files-container {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -51,24 +50,24 @@ body section .files-container {
   background-color: #1d2c67;
 }
 
-@media screen and (max-width: 1439px) {
-  body section .files-container {
+@media screen and (max-width: 1279px) {
+  body .section .files-container {
     min-width: 325px;
   }
 }
 
-body section .files-container .logo {
+body .section .files-container .logo {
   background: url(../images/logo.svg) no-repeat;
   margin: 40px;
 }
 
-body section .files-container .files-items {
+body .section .files-container .files-items {
   display: flex;
   margin-top: 40px;
   padding-top: 40px;
 }
 
-body section .files-container .files-items span {
+body .section .files-container .files-items span {
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -76,26 +75,26 @@ body section .files-container .files-items span {
   transition: 0.2s ease-out;
 }
 
-body section .files-container .files-items span:hover {
+body .section .files-container .files-items span:hover {
   opacity: 0.75;
 }
 
-body section .files-container .files-items .ic-document {
+body .section .files-container .files-items .ic-document {
   background: #0c122c url(../images/icon-document.svg) no-repeat center;
   background-size: 40%;
 }
 
-body section .files-container .files-items .ic-folder {
+body .section .files-container .files-items .ic-folder {
   background: #0c122c url(../images/icon-folder.svg) no-repeat center;
   background-size: 50%;
 }
 
-body section .files-container .files-items .ic-upload {
+body .section .files-container .files-items .ic-upload {
   background: #0c122c url(../images/icon-upload.svg) no-repeat center;
   background-size: 50%;
 }
 
-body section .storage-container {
+body .section .storage-container {
   width: 540px;
   height: auto;
   border-radius: 12px;
@@ -105,8 +104,8 @@ body section .storage-container {
   align-self: flex-end;
 }
 
-@media screen and (max-width: 1439px) {
-  body section .storage-container {
+@media screen and (max-width: 1279px) {
+  body .section .storage-container {
     min-width: 325px;
     margin-left: 0;
     margin-top: 18px;
@@ -114,19 +113,19 @@ body section .storage-container {
   }
 }
 
-body section .storage-container .title {
+body .section .storage-container .title {
   font-size: 1rem;
   font-weight: 400;
 }
 
-@media screen and (max-width: 1439px) {
-  body section .storage-container .title {
+@media screen and (max-width: 1279px) {
+  body .section .storage-container .title {
     font-size: 0.8rem;
     text-align: center;
   }
 }
 
-body section .storage-container .progressbar {
+body .section .storage-container .progressbar {
   width: 450px;
   height: 24px;
   margin: 18px 0 10px 0;
@@ -134,13 +133,13 @@ body section .storage-container .progressbar {
   background-color: #0c122c;
 }
 
-@media screen and (max-width: 1439px) {
-  body section .storage-container .progressbar {
+@media screen and (max-width: 1279px) {
+  body .section .storage-container .progressbar {
     width: 100%;
   }
 }
 
-body section .storage-container .progressbar .progressbar-line {
+body .section .storage-container .progressbar .progressbar-line {
   width: 75%;
   height: 16px;
   border-radius: 8px;
@@ -151,7 +150,7 @@ body section .storage-container .progressbar .progressbar-line {
   background: linear-gradient(90deg, #ffa399, #ff4d97);
 }
 
-body section .storage-container .progressbar .progressbar-line::after {
+body .section .storage-container .progressbar .progressbar-line::after {
   content: "";
   padding: 6px;
   margin: 2px;
@@ -161,15 +160,15 @@ body section .storage-container .progressbar .progressbar-line::after {
   background: #dddbff;
 }
 
-body section .storage-container .start-end {
+body .section .storage-container .start-end {
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
   font-weight: 700;
 }
 
-@media screen and (max-width: 1439px) {
-  body section .storage-container .start-end {
+@media screen and (max-width: 1279px) {
+  body .section .storage-container .start-end {
     font-size: 0.8rem;
   }
 }
@@ -182,7 +181,7 @@ body .popup {
   right: 210px;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1279px) {
   body .popup {
     right: 0;
     top: -40px;
@@ -201,7 +200,7 @@ body .popup .storage {
   padding: 16px;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1279px) {
   body .popup .storage {
     border-radius: 8px;
   }
@@ -222,7 +221,7 @@ body .popup .arrow {
   border-bottom: 20px solid transparent;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1279px) {
   body .popup .arrow {
     display: none;
   }
@@ -236,7 +235,7 @@ body .attribution {
   align-self: center;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1279px) {
   body .attribution {
     padding: 0 24px 24px 24px;
     text-align: center;
@@ -266,7 +265,7 @@ body::after {
   z-index: -1;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1279px) {
   body::after {
     background: url(../images/bg-mobile.svg) no-repeat top/100% 100%;
   }
